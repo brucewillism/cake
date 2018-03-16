@@ -17,9 +17,13 @@
     <fieldset>
         <legend><?= __('Add Article') ?></legend>
         <?php
-            echo $this->Form->control('title');
-            echo $this->Form->control('body');
-            echo $this->Form->control('user_id', ['options' => $users]);
+            echo $this->Form->create($article);
+// just added the categories input
+echo $this->Form->input('category_id');
+echo $this->Form->input('title');
+echo $this->Form->input('body', ['rows' => '3']);
+echo $this->Form->button(__('Save Article'));
+echo $this->Form->end();
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
